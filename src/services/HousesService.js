@@ -11,6 +11,9 @@ class HousesService {
     delete houseQuery.sort
     const pageNumber = parseInt(houseQuery.page) || 1
     delete houseQuery.page
+    const searchBy = houseQuery.search
+    delete houseQuery.search
+    if (searchBy) houseQuery.description = { $regex: new RegExp(searchBy, 'ig') }
 
     const houseLimit = 10
     const skipAmount = (pageNumber - 1) * houseLimit
