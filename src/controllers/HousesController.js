@@ -15,14 +15,14 @@ export class HousesController extends BaseController {
 * @param {import("express").Response} response,
 * @param {import("express").NextFunction} next,
 */
-  async getHouses(request, response, next) {
-    try {
-      const houses = await housesService.getHouses()
-      response.send(houses)
-    } catch (error) {
-      next(error)
-    }
-  }
+  // async getHouses(request, response, next) {
+  //   try {
+  //     const houses = await housesService.getHouses()
+  //     response.send(houses)
+  //   } catch (error) {
+  //     next(error)
+  //   }
+  // }
 
   /**
   * @param {import("express").Request} request,
